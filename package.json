@@ -1,0 +1,20 @@
+{
+  "name": "protocol-handler",
+  "private": true,
+  "version": "0.0.1",
+  "description": "protocol-handler",
+  "main": "dist/index.js",
+  "typings": "dist/types/index.d.ts",
+  "author": {
+    "name": "yolik"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.14"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "watch",
+    "test": "node dist/test/test.js",
+    "link": "npm link"
+  }
+}

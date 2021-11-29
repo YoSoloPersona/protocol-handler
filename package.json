@@ -9,12 +9,12 @@
     "name": "yolik"
   },
   "devDependencies": {
-    "@types/node": "^12.12.14"
+    "@types/node": "^12.12.14",
+    "typescript": "^4.5.2"
   },
   "scripts": {
     "build": "tsc",
     "watch": "watch",
-    "test": "node dist/test/test.js",
-    "link": "npm link"
+    "test": "node dist/test/test.js"
   }
 }

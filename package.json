@@ -1,20 +1,53 @@
 {
   "name": "protocol-handler",
-  "private": true,
-  "version": "0.0.1",
-  "description": "protocol-handler",
-  "main": "dist/index.js",
-  "typings": "dist/types/index.d.ts",
+  "private": false,
+  "version": "0.9.0",
+  "description": "Help with file processing",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm5/index.js",
+  "typings": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "node": "./dist/cjs/index.js",
+      "require": "./dist/cjs/index.js",
+      "es2015": "./dist/esm/index.js"
+    },
+    "./stream": {
+      "types": "./dist/types/stream/index.d.ts",
+      "node": "./dist/cjs/stream/index.js",
+      "require": "./dist/cjs/stream/index.js",
+      "es2015": "./dist/esm/stream/index.js"
+    },
+    "./rxjs": {
+      "types": "./dist/types/rxjs/index.d.ts",
+      "node": "./dist/cjs/rxjs/index.js",
+      "require": "./dist/cjs/rxjs/index.js",
+      "es2015": "./dist/esm/rxjs/index.js"
+    }
+  },
   "author": {
-    "name": "yolik"
+    "name": "Yolik"
   },
   "devDependencies": {
+    "@types/debug": "^4.1.7",
+    "@types/jasmine": "^4.0.2",
     "@types/node": "^12.12.14",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "debug": "^4.3.4",
+    "eslint": "^8.13.0",
+    "jasmine": "^4.0.2",
+    "typedoc": "^0.22.15",
     "typescript": "^4.5.2"
   },
   "scripts": {
-    "build": "tsc",
-    "watch": "watch",
-    "test": "node dist/test/test.js"
+    "build": "tsc -b ./src/tsconfig.cjs.json ./src/tsconfig.esm.json",
+    "watch": "tsc -b ./src/tsconfig.cjs.json ./src/tsconfig.esm.json --watch",
+    "generate doc": "typedoc --tsconfig ./tsconfig.json",
+    "test": "jasmine --config=spec/support/jasmine.json"
+  },
+  "dependencies": {
+    "rxjs": "^7.5.5"
   }
 }

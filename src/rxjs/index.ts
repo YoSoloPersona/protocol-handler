@@ -1,0 +1,1 @@
+export { getObservable } from './getObservable';

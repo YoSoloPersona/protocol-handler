@@ -1,15 +1,15 @@
+import { dirData, dirFail } from '../config';
 import { getDirectories } from '../../stream/getDirectories';
 import { getObservable } from '../../rxjs';
 
-const dir = './test-files';
-const dirFail = './dir-fail';
+
 const re1 = /1/;
 
 describe('#getDirectories', () => {
-    it(`Получение всех папок из указанной ${dir}, включая подпапки.`, (done) => {
+    it(`Получение всех папок из указанной ${dirData}, включая подпапки.`, (done) => {
         let countDirs = 0;
 
-        getObservable(getDirectories(dir)).subscribe({
+        getObservable(getDirectories(dirData)).subscribe({
             next: () => {
                 countDirs++;
             },
@@ -23,10 +23,10 @@ describe('#getDirectories', () => {
         });
     });
 
-    it(`Получение всех папок из указанной ${dir}, исключая подпаки.`, (done) => {
+    it(`Получение всех папок из указанной ${dirData}, исключая подпаки.`, (done) => {
         let countDirs = 0;
 
-        getObservable<string>(getDirectories(dir, false)).subscribe({
+        getObservable<string>(getDirectories(dirData, false)).subscribe({
             next: () => {
                 countDirs++;
             },
@@ -40,11 +40,11 @@ describe('#getDirectories', () => {
         });
     });
 
-    it(`Получение папки по регулярному выражению '1' в ${dir}.`, (done) => {
+    it(`Получение папки по регулярному выражению '1' в ${dirData}.`, (done) => {
         let countDirs = 0;
         let foundDir = '';
 
-        getObservable<string>(getDirectories(dir, true, re1)).subscribe({
+        getObservable<string>(getDirectories(dirData, true, re1)).subscribe({
             next: (dir) => {
                 foundDir = dir;
                 countDirs++;
@@ -65,7 +65,7 @@ describe('#getDirectories', () => {
             complete: () => {
                 fail(`Удалось получить папки из несуществующеё папки ${dirFail}.`);
             },
-            error: (err) => {
+            error: () => {
                 done();
             }
         });

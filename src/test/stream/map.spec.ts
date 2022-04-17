@@ -2,6 +2,7 @@ import { promises } from 'fs';
 import * as path from 'path';
 
 // local
+import { dirData } from '../config';
 import { getFiles } from '../../stream/getFiles';
 import { map } from '../../stream/map';
 
@@ -10,16 +11,15 @@ type u = {
     size: number;
 }
 
-const dir = './test-files';
 const listData: u[] = [];
 const ld = [
-    { source: '..\\..\\..\\..\\test-files\\1.txt', size: 11 },
-    { source: '..\\..\\..\\..\\test-files\\a\\1.bin', size: 0 }
+    { source: '..\\..\\..\\..\\spec\\test-files\\1.txt', size: 11 },
+    { source: '..\\..\\..\\..\\spec\\test-files\\a\\1.bin', size: 0 }
   ]
 
 describe('#map', () => {
-    it(`Получение длин файлов в папке ${path.resolve(dir)}`, (done) => {
-        let stream = getFiles(dir)
+    it(`Получение длин файлов в папке ${path.resolve(dirData)}`, (done) => {
+        const stream = getFiles(dirData)
         .pipe(map<string, u>(async (source) => { 
             return {
                 source: path.relative(__dirname, source),

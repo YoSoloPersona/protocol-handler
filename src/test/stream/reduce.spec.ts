@@ -1,13 +1,14 @@
 import { promises } from 'fs';
 
+import { dirData } from '../config'
 import { map, reduce, getFiles } from '../../stream';
 
-const dir = './test-files';
+
 
 describe('#reduce', () => {
-    it(`Получение размера всех файлов в папке '${dir}'`, (done) => {
+    it(`Получение размера всех файлов в папке '${dirData}'`, (done) => {
         let sum = 0;
-        const stream = getFiles(dir)
+        const stream = getFiles(dirData)
             // преобразуем пути к файлам в их размеры в байтах
             .pipe(
                 map<string, number>(

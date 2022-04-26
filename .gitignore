@@ -6,3 +6,6 @@ docs/
 
 # Compile
 dist/
+
+# Coverage
+coverage/

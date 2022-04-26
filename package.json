@@ -1,33 +1,37 @@
 {
   "name": "protocol-handler",
-  "private": false,
   "version": "0.9.0",
   "description": "Help with file processing",
   "main": "./dist/cjs/index.js",
-  "module": "./dist/esm5/index.js",
-  "typings": "./dist/types/index.d.ts",
+  "module": "./dist/esm/index.js",
+  "es2015": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "typesVersions": {
+      "*": {
+        "stream": ["./dist/types/stream/index.d.ts"],
+        "rxjs": ["./dist/types/rxjs/index.d.ts"]
+      }
+  },
   "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "node": "./dist/cjs/index.js",
-      "require": "./dist/cjs/index.js",
-      "es2015": "./dist/esm/index.js"
-    },
     "./stream": {
       "types": "./dist/types/stream/index.d.ts",
       "node": "./dist/cjs/stream/index.js",
       "require": "./dist/cjs/stream/index.js",
-      "es2015": "./dist/esm/stream/index.js"
+      "es2015": "./dist/esm/stream/index.js",
+      "default": "./dist/esm/stream/index.js"
     },
     "./rxjs": {
       "types": "./dist/types/rxjs/index.d.ts",
       "node": "./dist/cjs/rxjs/index.js",
       "require": "./dist/cjs/rxjs/index.js",
-      "es2015": "./dist/esm/rxjs/index.js"
-    }
+      "es2015": "./dist/esm/rxjs/index.js",
+      "default": "./dist/esm/rxjs/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "author": {
-    "name": "Yolik"
+    "name": "Yolik",
+    "email": "yo.solo.persona@gmail.com"
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",

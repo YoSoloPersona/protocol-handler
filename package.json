@@ -1,7 +1,7 @@
 {
-  "name": "protocol-handler",
+  "name": "yo-data-processing",
   "version": "0.9.0",
-  "description": "Help with file processing",
+  "description": "Help with data processing",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "es2015": "./dist/esm/index.js",
@@ -30,8 +30,12 @@
     "./package.json": "./package.json"
   },
   "author": {
-    "name": "Yolik",
+    "name": "yolik",
     "email": "yo.solo.persona@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YoSoloPersona/yo-data-processing"
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",

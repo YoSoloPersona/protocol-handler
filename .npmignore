@@ -1,0 +1,11 @@
+# Node
+node_modules/
+
+# Documentation
+docs/
+
+# Source
+src/
+
+# Coverage
+coverage/

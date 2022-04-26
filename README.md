@@ -1,6 +1,6 @@
-﻿# protocol-handler
+﻿# yo-data-processing
 
-A module that I wrote to process files using nodejs stream.
+A module that I wrote to process dagta using nodejs stream.
 
 ## Important
 First of all, the module was written for learning nodejs.

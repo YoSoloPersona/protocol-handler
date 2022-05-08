@@ -1,6 +1,6 @@
 {
   "name": "yo-data-processing",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Help with data processing",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",

@@ -5,6 +5,7 @@
         "removeComments": false,
         "declaration": true,
         "declarationDir": "dist/types",
+        "downlevelIteration": true,
         "lib": [
           "esnext",
           "dom"

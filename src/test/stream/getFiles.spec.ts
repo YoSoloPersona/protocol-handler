@@ -3,7 +3,7 @@ import * as debug from 'debug';
 
 // local
 import { dirData, dirFail } from '../config';
-import { getFiles } from '../../stream/getFiles';
+import { getFiles } from '../../stream';
 
 const log = debug('test:getFiles');
 

@@ -9,4 +9,4 @@ export { tap } from './stream/tap';
 export { bufferToObjectGenerator } from './stream/bufferToObjectGenerator';
 export { reduce } from './stream/reduce';
 
-export { getObservable } from './rxjs/getObservable'
+export { getObservable } from './rxjs/getObservable';

@@ -7,12 +7,23 @@
   "es2015": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "typesVersions": {
-      "*": {
-        "stream": ["./dist/types/stream/index.d.ts"],
-        "rxjs": ["./dist/types/rxjs/index.d.ts"]
-      }
+    "*": {
+      "stream": [
+        "./dist/types/stream/index.d.ts"
+      ],
+      "rxjs": [
+        "./dist/types/rxjs/index.d.ts"
+      ]
+    }
   },
   "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "node": "./dist/cjs/index.js",
+      "require": "./dist/cjs/index.js",
+      "es2015": "./dist/esm/index.js",
+      "default": "./dist/esm5/index.js"
+    },
     "./stream": {
       "types": "./dist/types/stream/index.d.ts",
       "node": "./dist/cjs/stream/index.js",
@@ -56,6 +67,6 @@
     "test": "jasmine --config=spec/support/jasmine.json"
   },
   "dependencies": {
-    "rxjs": "^7.5.5"
+    "rxjs": "7.8.0"
   }
 }

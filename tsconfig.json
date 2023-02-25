@@ -12,9 +12,9 @@
         ],
         "baseUrl": ".",
         "paths": {
-            "protocol-handler": ["./src/index"],
-            "protocol-handler/stream": ["./src/stream/index"],
-            "protocol-handler/rxjs": ["./src/rxjs/index"]
+            "yo-data-processing": ["./src/index"],
+            "yo-data-processing/stream": ["./src/stream/index"],
+            "yo-data-processing/rxjs": ["./src/rxjs/index"]
         }
     },
     "include": ["src"],
